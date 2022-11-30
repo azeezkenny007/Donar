@@ -1,12 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Card from "../components/shared/Card/Card";
+import { Campaigns, Donate, Herosection, Stats } from "../components/Landing";
 import Layout from "../components/layout";
 export default function Home() {
   return (
-    <div className="bg-dark-primary App">
-      <Layout>layout</Layout>
+    <div className="bg-light-primary App">
+      <Layout>
+        <Herosection />
+        <Stats />
+        <Donate />
+        <Campaigns />
+      </Layout>
     </div>
   );
 }

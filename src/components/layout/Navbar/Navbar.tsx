@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import BrandLogo from "../../shared/BrandLogo";
+import Button from "../../shared/Button/Button";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between py-16 px-32 items-center">
+    <nav className="flex justify-between py-16 contain items-center">
       <BrandLogo />
-      <ul className="flex space-x-6 items-center text-text tracking-tight font-head text-white">
+      <ul className="flex space-x-6 items-center text-text tracking-tight font-head text-light-text">
         <li>
           <Link href="#">Home</Link>
         </li>
@@ -20,24 +21,14 @@ const Navbar = () => {
           <Link href="#">Blog</Link>
         </li>
       </ul>
-      <Gbutton />
+      <div className="max-w-lg">
+        <Button variant="outlined">Connect wallet</Button>
+      </div>
     </nav>
   );
 };
 
 export default Navbar;
-
-const Gbutton = () => {
-  return (
-    <div className="bg-gradient-to-r from-dark-accent to-dark-accent2 p-0.5 rounded-lg">
-      <div className="bg-dark-primary px-7 py-3 rounded-md">
-        <button className="bg-gradient-to-r text-text from-dark-accent to-dark-accent2 bg-clip-text text-transparent">
-          Connect wallet
-        </button>
-      </div>
-    </div>
-  );
-};
 
 /**font-family: Play;
 font-size: 20px;
