@@ -1,7 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Campaigns, Donate, Herosection, Stats } from "../components/Landing";
+import {
+  Campaigns,
+  Donate,
+  Herosection,
+  Stats,
+  Leaderboard,
+  Blog,
+  Testimonials,
+} from "../components/Landing";
 import Layout from "../components/layout";
 export default function Home() {
   return (
@@ -11,6 +19,9 @@ export default function Home() {
         <Stats />
         <Donate />
         <Campaigns />
+        <Leaderboard />
+        <Blog />
+        <Testimonials />
       </Layout>
     </div>
   );
