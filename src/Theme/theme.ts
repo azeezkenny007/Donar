@@ -1,14 +1,31 @@
-import { extendTheme } from "@chakra-ui/react";
+import {
+  extendTheme,
+  type ThemeConfig,
+  type ThemeExtension,
+} from "@chakra-ui/react";
 
 const colors = {
-  primary: "#192F2C",
-  secondary: "#2F5C56",
-  neutral: "#FEFEFE",
-  accent: "7AF1DC",
+  dark: {
+    primary: "#192F2C",
+    secondary: "#2F5C56",
+    neutral: "#FEFEFE",
+    accent: "7AF1DC",
+  },
+  light: {
+    primary: "#FFFFFF",
+    secondary: "#7AF1DC",
+    neutral: "#FEFEFE",
+    accent: "7AF1DC",
+  },
 };
 const fonts = {
   head: "'Plus Jakarta Sans', sans-serif;",
   body: "'Mandali', sans-serif;",
+};
+
+const config: ThemeConfig = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
 };
 
 const space = {
@@ -27,7 +44,11 @@ const space = {
   6.3: "80px",
 };
 
-export const theme = extendTheme({
+const theme = extendTheme({
+  config,
   colors,
   fonts,
+  space,
 });
+
+export default theme;

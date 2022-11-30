@@ -1,7 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
+import Card from "../components/shared/Card/Card";
+import Layout from "../components/layout";
 export default function Home() {
-  return <div>App</div>;
+  return (
+    <div className="bg-dark-primary App">
+      <Layout>layout</Layout>
+    </div>
+  );
 }
