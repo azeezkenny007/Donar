@@ -16,7 +16,7 @@ const Donate = (props: Props) => {
           <h1 className="text-[36px] mb-4 leading-[42px]">
             Reaching out to communities in need
           </h1>
-          <p className="text-text mb-8 leading-8">
+          <p className="text-text text-light-text/90 mb-8 leading-8">
             We connect organizations with people who want to lend a hand. Help
             grant life-changing wishes for children with critical illnesses.
             During this uncertain time, more children need your help. Lend a
