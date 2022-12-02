@@ -23,10 +23,11 @@ module.exports = {
           accent: "#7AF1DC",
           accent2: "#3E94E3",
           accent3: "#F2FFFD",
+          accent4: "#D0F9F1",
         },
       },
       fontFamily: {
-        head: ' "Play", sans-serif',
+        head: " 'Poppins', sans-serif",
         body: "'Mandali', sans-serif;",
       },
       fontSize: {

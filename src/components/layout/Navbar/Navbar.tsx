@@ -21,9 +21,9 @@ const Navbar = () => {
           <Link href="#">Blog</Link>
         </li>
       </ul>
-      <div className="max-w-lg">
+      <Link href="/connet" className="max-w-lg">
         <Button variant="outlined">Connect wallet</Button>
-      </div>
+      </Link>
     </nav>
   );
 };

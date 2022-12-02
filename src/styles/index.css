@@ -9,7 +9,7 @@
 }
 
 .App {
-  @apply min-h-screen;
+  @apply min-h-screen font-head;
 }
 
 .fancy {
@@ -17,4 +17,7 @@
 }
 .contain {
   @apply px-8 md:px-12 lg:px-24;
+}
+.connetButton {
+  @apply flex px-7 py-2 items-center border border-light-accent2 rounded-lg gap-4 cursor-pointer;
 }
