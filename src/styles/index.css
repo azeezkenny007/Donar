@@ -13,7 +13,7 @@
 }
 
 .fancy {
-  @apply bg-gradient-to-tr from-light-accent to-light-accent2 text-transparent bg-clip-text text-lg font-semibold;
+  @apply bg-gradient-to-r from-light-accent to-light-accent2 text-transparent bg-clip-text text-lg font-semibold;
 }
 .contain {
   @apply px-8 md:px-12 lg:px-24;

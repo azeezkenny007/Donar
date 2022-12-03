@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import pH from "../../../asset/pH.jpeg";
+import BlogCards from "../../shared/Card/BlogsCards";
+
 type Props = {};
 
 const blog = [
@@ -55,7 +57,7 @@ const Blog = (props: Props) => {
         <div className="space-y-8">
           {blog.map((item) => {
             return (
-              <Blogs
+              <BlogCards
                 name={item.name}
                 content={item.content}
                 date={item.date}
@@ -67,30 +69,6 @@ const Blog = (props: Props) => {
         </div>
       </div>
     </section>
-  );
-};
-
-interface IBlog {
-  img: any;
-  name: string;
-  content: string;
-  date: string;
-}
-
-const Blogs = ({ content, date, img, name }: IBlog) => {
-  return (
-    <div className="bg-gradient-to-tr from-light-accent p-0.5 to-light-accent2  rounded-xl">
-      <div className="flex  gap-4 bg-light-primary rounded-lg">
-        <Image className="rounded-l-lg" src={img} alt={name} />
-        <div className="text-base self-center space-y-2">
-          <p className="bg-gradient-to-tr from-light-accent to-light-accent2 bg-clip-text text-transparent">
-            {date}
-          </p>
-          <p className="text-light-text">{name}</p>
-          <p className="text-sm leading-6 text-light-text">{content}</p>
-        </div>
-      </div>
-    </div>
   );
 };
 
