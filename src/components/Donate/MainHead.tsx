@@ -16,8 +16,9 @@ const MainHead = (props: Props) => {
       <div className="w-full">
         <Breadcrumb />
         <div className="mt-8">
-          {/* <Info /> */}
-          <Payment />
+          <Info />
+          {/* <Payment /> */}
+          {/* <Confirm /> */}
         </div>
       </div>
     </section>

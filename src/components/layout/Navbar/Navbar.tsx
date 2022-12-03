@@ -5,7 +5,7 @@ import Button from "../../shared/Button/Button";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between py-16 contain items-center">
+    <nav className="flex justify-between py-8 contain items-center">
       <BrandLogo />
       <ul className="flex space-x-6 items-center text-text tracking-tight font-head text-light-text">
         <li>
