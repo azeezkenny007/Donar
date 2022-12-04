@@ -15,13 +15,13 @@ export default function Home() {
   return (
     <div className="bg-light-primary App">
       <Layout>
-        <Herosection />
+        {/* <Herosection />
         <Stats />
         <Donate />
         <Campaigns />
         <Leaderboard />
         <Blog />
-        <Testimonials />
+        <Testimonials /> */}
       </Layout>
     </div>
   );
