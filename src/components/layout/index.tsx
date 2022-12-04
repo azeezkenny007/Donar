@@ -45,12 +45,12 @@ const Layout = ({ children }: Props) => {
     getConnectedAccount();
   }, []);
   return (
-    <Box className="pb-10">
+    <Box className="lg:pb-10">
       <Navbar />
       {children}
       <Footer />
       <div className="bg-dark-line w-full h-0.5 mt-10 mb-10" />
-      <p className="text-center text-light-text text-text">
+      <p className="text-center text-light-text lg:text-text">
         ©copyright 2022 - Polygon Africa Hackathon
       </p>
     </Box>

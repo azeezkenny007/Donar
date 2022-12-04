@@ -34,13 +34,13 @@ const CampaignCard = () => {
             </div>
           </div>
         </div>
-        <div className="space-y-4">
-          <p className="bg-gradient-to-tr from-light-accent to-light-accent2 bg-clip-text text-transparent">
+        <div className="space-y-4 text-sm lg:text-base">
+          <p className="bg-gradient-to-tr  from-light-accent to-light-accent2 bg-clip-text text-transparent">
             Goal: $50,000
           </p>
           <p>Raised: $15, 000</p>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 text-sm lg:text-base">
           <p>Donating to this project</p>
           <div className="flex justify-end">
             <span>

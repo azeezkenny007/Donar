@@ -31,8 +31,8 @@ const items = [
 
 const Stats = () => {
   return (
-    <section className="bg-light-secondary   py-8  md:py-16 my-24">
-      <div className=" flex items-center contain justify-between">
+    <section className="bg-light-secondary my-10 py-8  md:py-16 lg:my-24">
+      <div className=" flex flex-wrap lg:flex-nowrap items-center gap-3 contain justify-evenly lg:justify-between">
         {items.map((item) => {
           return (
             <Items
@@ -56,9 +56,9 @@ type TItem = {
 
 const Items = ({ icon, name, number }: TItem) => {
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className="flex w-1/3 lg:w-full flex-col items-center space-y-4">
       <Image src={icon} alt={name} />
-      <div className="text-light-text font-bold text-[28px] text-center mt-4">
+      <div className="text-light-text font-bold text-text lg:text-[28px] text-center mt-4">
         <p>{number}</p>
         <p>{name}</p>
       </div>

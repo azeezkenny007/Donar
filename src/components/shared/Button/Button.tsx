@@ -20,7 +20,7 @@ const Button = ({ children, variant }: Props) => {
   return (
     <button
       className="
-       px-4 md:px-6 py-2 w-full md:py-4 text-center rounded-md font-semibold text-sm md:text-text text-dark-primary bg-gradient-to-r from-dark-accent  to-dark-accent2">
+       px-4 md:px-6 py-4 w-full md:py-4 text-center rounded-md font-semibold text-sm md:text-text text-dark-primary bg-gradient-to-r text-text from-dark-accent  to-dark-accent2">
       {children}
     </button>
   );

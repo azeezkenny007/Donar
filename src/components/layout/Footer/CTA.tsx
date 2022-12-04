@@ -5,8 +5,8 @@ type Props = {};
 
 const CTA = (props: Props) => {
   return (
-    <div className="w-full flex items-center justify-between bg-dark-accent px-9 py-12 md:px-12  md:py-16 rounded-md">
-      <div className="space-y-2">
+    <div className="w-full flex flex-col lg:flex-row gap-4 items-center justify-between bg-dark-accent px-6 py-9 md:px-12  md:py-16 rounded-md">
+      <div className="space-y-2 text-center lg:text-left">
         <p className="text-lg md:text-3xl tracking-tight font-semibold text-dark-primary">
           Running a charity organization?
         </p>

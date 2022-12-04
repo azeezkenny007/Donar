@@ -4,7 +4,11 @@ import Image from "next/image";
 type Props = {};
 
 const BrandLogo = (props: Props) => {
-  return <Image src={brandLogo} alt="brandLogo" width={135} height={40} />;
+  return (
+    <div className="w-20 lg:w-28">
+      <Image src={brandLogo} alt="brandLogo" />
+    </div>
+  );
 };
 
 export default BrandLogo;

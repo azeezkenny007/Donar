@@ -6,11 +6,16 @@ type Props = {};
 
 const Campaigns = (props: Props) => {
   return (
-    <div className="contain flex flex-wrap justify-between my-20">
-      <CampaignCard />
-      <CampaignCard />
-      <CampaignCard />
-    </div>
+    <section className="contain my-20">
+      <h1 className="text-light-text text-3xl lg:text-5xl mb-4 text-center font-semibold">
+        Campaigns
+      </h1>
+      <div className="flex flex-wrap justify-between gap-4 ">
+        <CampaignCard />
+        <CampaignCard />
+        <CampaignCard />
+      </div>
+    </section>
   );
 };
 

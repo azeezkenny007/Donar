@@ -49,11 +49,11 @@ const donors = [
 
 const Leaderboard = (props: Props) => {
   return (
-    <div className="py-16 bg-light-secondary contain my-20">
-      <h1 className="text-[48px] text-light-text text-center font-semibold mb-10">
+    <div className=" py-10 lg:py-16 bg-light-secondary contain my-10 lg:my-20">
+      <h1 className="text-4xl lg:text-[48px] text-light-text text-center font-semibold mb-10">
         Donors of the week
       </h1>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-4 lg:gap-8">
         {donors.map((item) => {
           return (
             <Card
@@ -79,10 +79,12 @@ interface ICard {
 
 const Card = ({ amount, img, name, rank }: ICard) => {
   return (
-    <div className="flex items-center justify-between w-96 bg-light-primary p-4 rounded-xl ">
-      <Image src={img} alt="avater" width={100} height={100} />
+    <div className="flex items-center justify-between lg:w-96 bg-light-primary p-4 rounded-xl ">
+      <div className="w-20 lg:w-[100px]">
+        <Image src={img} alt="avater" />
+      </div>
       <div className="text-light-text">
-        <p className="font-semibold text-text">{name}</p>
+        <p className="font-semibold lg:text-text">{name}</p>
         <p className="text-lg">{amount}</p>
       </div>
       <p className="fancy">0{rank}</p>
