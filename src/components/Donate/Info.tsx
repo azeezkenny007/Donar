@@ -6,9 +6,27 @@ import Avater2 from "../../asset/Ellipse 4.png";
 import Avater3 from "../../asset/Ellipse 5.png";
 import Avater4 from "../../asset/Ellipse 6.png";
 import Button from "../shared/Button/Button";
+import { ethers } from "ethers";
+import { abi, contractAddress } from "../../DonarBackend/constants/index";
 type Props = {};
 
 const Info = (props: Props) => {
+  async function donate() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, signer);
+    try {
+      const transactionResponse = await contract.donate(
+        "0x96a8B06597F0473DB023FEDEe9CA9295cdA9c9c8",
+        {
+          value: ethers.utils.parseUnits("10", "wei"),
+        }
+      );
+      console.log("Done!!");
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return (
     <div className="mt-8 max-w-lg">
       <div className="space-y-3">
@@ -69,7 +87,12 @@ const Info = (props: Props) => {
           </div>
         </div>
       </div>
-      <Button variant="contained">Donate now</Button>
+      <div
+        onClick={() => {
+          donate();
+        }}>
+        <Button variant="contained">Donate now</Button>
+      </div>
     </div>
   );
 };
