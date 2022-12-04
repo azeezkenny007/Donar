@@ -6,11 +6,11 @@ type Props = {};
 
 const Search = (props: Props) => {
   return (
-    <div className="my-10 flex justify-between items-center">
+    <div className="my-10 flex gap-4 lg:gap-0 flex-col lg:flex-row justify-between lg:items-center">
       <h1 className="text-light-text text-4xl font-medium">
         Explore Ongoing Campaigns
       </h1>
-      <div className="flex items-center space-x-4">
+      <div className="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-x-4">
         <div className="flex p-2 items-center  gap-2 border border-light-accent rounded-md">
           <Image src={searchIcon} alt="search" width={16} height={16} />
           <input

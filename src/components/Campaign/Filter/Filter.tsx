@@ -32,7 +32,7 @@ interface IOptions {
 const Option = ({ text }: IOptions) => {
   return (
     <div
-      className="text-light-text min-w-[250px] text-center cursor-pointer
+      className="text-light-text min-w-[150px] w-[40vw] max-w-[250px] text-center cursor-pointer
     bg-transparent hover:bg-gradient-to-r hover:from-light-accent hover:to-light-accent2 transition-all duration-200 ease-in-out text-lg font-medium border border-light-accent py-4 px-8 rounded-full">
       {text}
     </div>
