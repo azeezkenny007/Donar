@@ -8,9 +8,9 @@ type Props = {
 const Button = ({ children, variant }: Props) => {
   if (variant === "outlined") {
     return (
-      <div className="bg-gradient-to-r max-w-sm w-full  from-dark-accent to-dark-accent2 p-0.5 rounded-lg">
+      <div className="bg-gradient-to-r w-full  from-dark-accent to-dark-accent2 p-0.5 rounded-lg">
         <div className="bg-light-primary px-7 py-3 rounded-md">
-          <button className="bg-gradient-to-r text-center text-text from-dark-accent to-dark-accent2 bg-clip-text text-transparent">
+          <button className="bg-gradient-to-r  w-full text-center text-text from-dark-accent to-dark-accent2 bg-clip-text text-transparent">
             {children}
           </button>
         </div>

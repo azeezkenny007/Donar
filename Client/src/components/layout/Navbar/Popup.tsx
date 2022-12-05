@@ -8,7 +8,7 @@ type Props = {
 
 const Popup = ({ setToogle }: Props) => {
   return (
-    <section className="fixed px-4 bg-black/20 top-0 bottom-0 left-0 right-0">
+    <section className="fixed z-40 px-4 bg-black/20 top-0 bottom-0 left-0 right-0">
       <div className="w-2/3 h-full grid place-content-center bg-light-neutral absolute right-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
