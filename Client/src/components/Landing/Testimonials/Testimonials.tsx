@@ -5,7 +5,7 @@ type Props = {};
 
 const Testimonials = (props: Props) => {
   return (
-    <section className="contain my-10 lg:my-20 flex justify-center" id="#footer">
+    <section className="contain my-10 lg:my-20 flex justify-center" >
       <div className="bg-gradient-to-tr rounded-xl lg:w-2/3 from-light-accent p-0.5  to-light-accent2">
         <div className="bg-light-primary flex rounded-lg items-center gap-8 text-center flex-col px-12 py-8">
           <Image src={avater} alt="person" />

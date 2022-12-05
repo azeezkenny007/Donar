@@ -35,14 +35,14 @@ const Navbar = () => {
         <li>
         <ScrollLink
             activeClass="active"
-            to="#footer"
+            to="#about"
             spy={true}
             smooth={true}
             offset={-70}
             duration={500}
           >
         
-          <Link href="#footer">About</Link>
+          <Link href="#donateSection">About</Link>
 
           </ScrollLink>
         </li>
