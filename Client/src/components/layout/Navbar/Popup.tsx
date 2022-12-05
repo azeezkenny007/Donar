@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import Button from "../../shared/Button/Button";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 type Props = {
   setToogle: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -26,16 +27,59 @@ const Popup = ({ setToogle }: Props) => {
         <div className="space-y-4">
           <ul className=" fancy space-y-4 text-center items-center text-text tracking-tight font-head text-light-text">
             <li className="text-3xl ">
-              <Link href="#">Home</Link>
+          
+          <ScrollLink
+            activeClass="active"
+            to="#testimonials"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+          <Link href="#home">Home</Link>
+
+          </ScrollLink>
             </li>
             <li className="text-3xl ">
-              <Link href="#">About</Link>
+            <ScrollLink
+            activeClass="active"
+            to="#about"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+        
+          <Link href="#donateSection">About</Link>
+
+          </ScrollLink>
             </li>
             <li className="text-3xl ">
-              <Link href="#">Campaigns</Link>
+            <ScrollLink
+            activeClass="active"
+            to="#campaigns"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={600}
+          >
+      
+          <Link href="#campaigns">Campaigns</Link>
+
+          </ScrollLink>
             </li>
             <li className="text-3xl ">
-              <Link href="#">Blog</Link>
+            <ScrollLink
+            activeClass="active"
+            to="#blog"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={600}
+          >
+
+          <Link href="#blog">Blog</Link>
+          </ScrollLink>
             </li>
           </ul>
           <Link
