@@ -6,7 +6,7 @@ type Props = {};
 
 const Campaigns = (props: Props) => {
   return (
-    <section className="contain my-20">
+    <section className="contain my-20" id="#campaigns">
       <h1 className="text-light-text text-3xl lg:text-5xl mb-4 text-center font-semibold">
         Campaigns
       </h1>

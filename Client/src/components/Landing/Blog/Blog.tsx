@@ -31,7 +31,7 @@ vulnerable African children and families by helping to improve access to healthc
 
 const Blog = (props: Props) => {
   return (
-    <section className="contain my-20">
+    <section className="contain my-20" id="#blog">
       <h1 className="text-light-text text-3xl lg:text-5xl font-medium text-center contain ">
         Recent Blog
       </h1>
