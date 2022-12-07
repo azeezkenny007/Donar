@@ -2,12 +2,12 @@ import { createContext, useContext, useState } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
 
 type IDonar = {
-  connect: () => void;
+  Metaconnect: () => void;
   connected: any;
 };
 
 const DonarContext = createContext<IDonar>({
-  connect() {
+  Metaconnect() {
     return;
   },
   connected: null,
@@ -15,7 +15,7 @@ const DonarContext = createContext<IDonar>({
 
 const DonarProvider = ({ children }: React.PropsWithChildren) => {
   const [connected, setConnected] = useState(null);
-  async function connect() {
+  async function Metaconnect() {
     const provider = await detectEthereumProvider();
 
     if (provider) {
@@ -56,7 +56,7 @@ const DonarProvider = ({ children }: React.PropsWithChildren) => {
   }
 
   return (
-    <DonarContext.Provider value={{ connect, connected }}>
+    <DonarContext.Provider value={{ Metaconnect, connected }}>
       {children}
     </DonarContext.Provider>
   );

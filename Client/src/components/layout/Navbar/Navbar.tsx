@@ -12,7 +12,7 @@ import Image from "next/image";
 const Navbar = () => {
   const [toogle, setToogle] = useState(false);
   const { connected } = useDonar();
-  console.log(toogle);
+  console.log(connected);
 
   return (
     <nav className="flex z-30 justify-between py-8 contain items-center">
@@ -60,11 +60,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-/**font-family: Play;
-font-size: 20px;
-font-weight: 400;
-line-height: 48px;
-letter-spacing: -0.022em;
-text-align: center;
- */

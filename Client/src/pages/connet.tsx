@@ -8,7 +8,7 @@ type Props = {};
 
 const Connect = (props: Props) => {
   const router = useRouter();
-  const { connect, connected } = useDonar();
+  const { Metaconnect, connected } = useDonar();
   console.log(connected);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Connect = (props: Props) => {
           <div
             className="connetButton "
             onClick={() => {
-              connect();
+              Metaconnect();
             }}>
             <Image src={metaMask} alt="metaMask" width={100} height={100} />
             <div className="text-light-text">

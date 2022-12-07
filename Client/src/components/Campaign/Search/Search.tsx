@@ -10,7 +10,7 @@ const Search = (props: Props) => {
       <h1 className="text-light-text text-4xl font-medium">
         Explore Ongoing Campaigns
       </h1>
-      <div className="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-x-4">
+      <div className="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
         <div className="flex p-2 items-center  gap-2 border border-light-accent rounded-md">
           <Image src={searchIcon} alt="search" width={16} height={16} />
           <input
