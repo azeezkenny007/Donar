@@ -1,13 +1,20 @@
 import { createContext, useContext, useState } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
+import { abi } from "./constants/contractMetadata.json";
+const contractAddress: string = "0x578A42E65EA6F8cca77940f79734c1da2868BBF7";
+import { ethers } from "ethers";
 
 type IDonar = {
   Metaconnect: () => void;
   connected: any;
+  donate: () => void;
 };
 
 const DonarContext = createContext<IDonar>({
   Metaconnect() {
+    return;
+  },
+  donate() {
     return;
   },
   connected: null,
@@ -55,8 +62,25 @@ const DonarProvider = ({ children }: React.PropsWithChildren) => {
       });
   }
 
+  async function donate() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(contractAddress, abi, signer);
+    try {
+      const transactionResponse = await contract.donate(
+        "0x96a8B06597F0473DB023FEDEe9CA9295cdA9c9c8", //but the address should be a dynamic one
+        {
+          value: ethers.utils.parseUnits("10", "wei"),
+        }
+      );
+      console.log("Done!!");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
-    <DonarContext.Provider value={{ Metaconnect, connected }}>
+    <DonarContext.Provider value={{ Metaconnect, connected, donate }}>
       {children}
     </DonarContext.Provider>
   );
