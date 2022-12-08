@@ -1,15 +1,27 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
 import {abi} from "./constants/contractMetadata.json"
 const contractAddress:string = "0x578A42E65EA6F8cca77940f79734c1da2868BBF7";
 import {ethers} from "ethers"
+import {app,db} from "./Firebase"
 import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 
 type IDonar = {
   connect: () => void;
   connected: any;
+  campaigns:any
   donate:() => void
 };
+
+interface Campaigns{
+   CampaignImage:string
+   CampaignName:string
+   Country:string
+   Goal:string
+   Raised:string
+   percent:string
+   typeOfCare:string
+}
 
 const DonarContext = createContext<IDonar>({
   connect() {
@@ -19,10 +31,38 @@ const DonarContext = createContext<IDonar>({
     return
   },
   connected: null,
+  campaigns:null
 });
 
 const DonarProvider = ({ children }: React.PropsWithChildren) => {
   const [connected, setConnected] = useState(null);
+  const  [campaigns,setCampaigns] = useState<any>([])
+
+   
+  useEffect(() => {
+    const getUsers = async () => {
+      const querySnapshot = await getDocs(collection(db, "campiagns"));//don't mind me i spelt campaign wrongly from the database so i didn't want to change It
+      setCampaigns(
+      querySnapshot.docs.map((doc)=>{
+           return {
+            id:doc.id,
+            data:{
+              CampaignImage:doc.data().CampaignImage,
+              CampaignName:doc.data().CampaignName,
+              Country:doc.data().Country,
+              Goal:doc.data().Goal,
+              Raised:doc.data().Raised,
+              percent:doc.data().percent,
+              typeOfCare:doc.data().typeOfCare
+            }
+           }
+      })
+      )
+    };
+  
+    getUsers();
+  }, []);
+
   async function connect() {
     const provider = await detectEthereumProvider();
 
@@ -81,7 +121,7 @@ const DonarProvider = ({ children }: React.PropsWithChildren) => {
   }
 
   return (
-    <DonarContext.Provider value={{ connect, connected ,donate}}>
+    <DonarContext.Provider value={{ connect, connected ,donate, campaigns}}>
              {children}
     </DonarContext.Provider>
   );
