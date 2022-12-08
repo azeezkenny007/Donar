@@ -3,6 +3,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import {abi} from "./constants/contractMetadata.json"
 const contractAddress:string = "0x578A42E65EA6F8cca77940f79734c1da2868BBF7";
 import {ethers} from "ethers"
+import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 
 type IDonar = {
   connect: () => void;
