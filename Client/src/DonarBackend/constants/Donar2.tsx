@@ -34,15 +34,19 @@ export const FirebaseBackendProvider = ({ children }: Children) => {
   const [campaigns, setCampaigns] = useState<Campaigns[] | null>([]);
 
   useEffect(() => {
-    const getUsers = async () => {
-      const querySnapshot = await getDocs(collection(db, "campiagns")); //don't mind me i spelt campaign wrongly from the database so i didn't want to change It
-      const colRef = collection(db, "campiagns");
+   const getUsers = async () => {
+     const colRef = collection(db,"campiagns");
+      const querySnapshot = await getDocs(colRef); //don't mind me i spelt campaign wrongly from the database so i didn't want to change It
+      querySnapshot.docs.map((doc)=>{
+        console.log(doc.data(),"💯")
+      })
       querySnapshot.docs.map((doc) => {
+       console.log(doc.data(),"🐛")
         setCampaigns([
           {
             ...campaigns,
-            CampaignImage: doc.data().CampaignImage,
-            CampaignName: doc.data().CampaignName,
+            CampaignImage:doc.data().CampaignImage,
+            CampaignName:doc.data().CampaignName,
             Country: doc.data().Country,
             Goal: doc.data().Goal,
             Raised: doc.data().Raised,
@@ -52,9 +56,10 @@ export const FirebaseBackendProvider = ({ children }: Children) => {
           },
         ]);
       });
-      getUsers();
-    };
-  }, []);
+     };
+     getUsers();
+    },[]);
+    console.log(campaigns,"🚀")
 
   return (
     <FirebaseContext.Provider value={{ campaigns, setCampaigns }}>
