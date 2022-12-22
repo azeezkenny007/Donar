@@ -7,9 +7,11 @@ import Avater2 from "../../../asset/Ellipse 4.png";
 import Avater3 from "../../../asset/Ellipse 5.png";
 import Avater4 from "../../../asset/Ellipse 6.png";
 import {useDonar} from "../../../DonarBackend/Donar"
+import { useFirebase,ContextNeeded } from "../../../DonarBackend/constants/Donar2";
 
 const CampaignCard = () => {
-  const {campaigns} = useDonar()
+  const {campaigns}  = useFirebase() as ContextNeeded
+  
   return (
     <div className="w-[375px] bg-light-accent3 p-4 rounded-lg">
       <div>
