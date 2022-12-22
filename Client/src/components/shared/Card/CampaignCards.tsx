@@ -20,7 +20,7 @@ const CampaignCard = ({campaigns}:Props) => {
   return (
     <div className="w-[375px] bg-light-accent3 p-4 rounded-lg">
       <div>
-        <Image className="rounded-lg" src={phImg} alt="kids" />
+        <Image className="rounded-lg" src={`https://res.cloudinary.com/demo/image/fetch/${campaigns.CampaignImage}`} alt="kids"  width={400} height={100}/>
         <div className="py-4 space-y-4">
           <p className="text-[24px] font-medium text-light-text">
             {campaigns.CampaignName}
