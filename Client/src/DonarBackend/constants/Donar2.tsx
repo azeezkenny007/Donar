@@ -1,4 +1,6 @@
-import { Children, createContext, useContext, useState } from "react";
+import { Children, createContext, useContext, useState,useEffect } from "react";
+import {app,db} from "../Firebase"
+import { collection, getDocs, doc, setDoc } from "firebase/firestore";
 
 export interface Campaigns {
   CampaignImage: string;
@@ -8,12 +10,13 @@ export interface Campaigns {
   Raised: string;
   percent: string;
   typeOfCare: string;
+  id: string
 }
 
 export interface ContextNeeded {
   campaigns: Campaigns[] | null;
   setCampaigns: unknown;
-  getHappy: () => void;
+
 }
 
 interface Children {
@@ -25,11 +28,27 @@ export const FirebaseContext = createContext<ContextNeeded | null>(null);
 export const FirebaseProvider = async ({ children }: Children) => {
   const [campaigns, setCampaigns] = useState<Campaigns[] | null>([]);
 
-  function getHappy() {
-    console.log("happy is the head that wear the crown");
-  }
+     
+  useEffect(() => {
+   const getUsers = async () => {
+    const querySnapshot = await getDocs(collection(db, "campiagns"));//don't mind me i spelt campaign wrongly from the database so i didn't want to change It
+    const colRef = collection(db,"campiagns");
+
+  
+     const value = querySnapshot.docs.map((doc)=>{
+      setCampaigns([{...campaigns,CampaignImage:doc.data().CampaignImage,CampaignName:doc.data().CampaignName,Country:doc.data().Country, Goal:doc.data().Goal,Raised:doc.data().Raised,typeOfCare:doc.data().typeOfCare,percent:doc.data().percent, id:doc.id,}])
+     })
+     getUsers()
+ 
+  }},[])
+  
+  
+  
+     
+     
+
   return (
-    <FirebaseContext.Provider value={{ campaigns, setCampaigns, getHappy }}>
+    <FirebaseContext.Provider value={{ campaigns, setCampaigns }}>
       {children}
     </FirebaseContext.Provider>
   );
@@ -37,4 +56,4 @@ export const FirebaseProvider = async ({ children }: Children) => {
 
 export const useFirebase = () => {
   return useContext(FirebaseContext);
-};
+}
