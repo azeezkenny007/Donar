@@ -15,14 +15,15 @@ const Campaigns = (props: Props) => {
       </h1>
       
      
-      <div className="flex flex-wrap justify-between gap-4 " >
-     
-           <CampaignCard  campaigns={campaigns}/> 
-           <CampaignCard />
-           <CampaignCard />
+        {campaigns?.map((post,id)=>(
+             <div className="flex flex-wrap justify-between gap-4 " >
+                  <CampaignCard campaigns={post} /> 
+        </div>
+        ))}
+           {/* <CampaignCard />
+           <CampaignCard /> */}
   
        
-      </div>
     </section>
   );
 };
