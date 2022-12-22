@@ -21,7 +21,7 @@ export interface Campaigns {
 
 export interface ContextNeeded {
   campaigns: Campaigns[] | null;
-  setCampaigns: any;
+  setCampaigns?: any;
 }
 
 interface Children {
