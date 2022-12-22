@@ -38,30 +38,7 @@ const DonarProvider = ({ children }: React.PropsWithChildren) => {
   const [connected, setConnected] = useState(null);
   const [campaigns,setCampaigns] = useState<object[]>([])
 
-   
-  useEffect(() => {
-    const getUsers = async () => {
-      const querySnapshot = await getDocs(collection(db, "campiagns"));//don't mind me i spelt campaign wrongly from the database so i didn't want to change It
-      const colRef = collection(db,"campiagns");
-     
-      setCampaigns(querySnapshot.docs.map((doc)=> doc.data()))
-      
-    };
 
-        //    return {
-            // id:doc.id,
-            // data:{
-            //   CampaignImage:doc.data().CampaignImage,
-            //   CampaignName:doc.data().CampaignName,
-            //   Country:doc.data().Country,
-            //   Goal:doc.data().Goal,
-            //   Raised:doc.data().Raised,
-            //   percent:doc.data().percent,
-            //   typeOfCare:doc.data().typeOfCare
-            
-  
-    getUsers();
-  }, []);
 
   async function connect() {
     const provider = await detectEthereumProvider();
