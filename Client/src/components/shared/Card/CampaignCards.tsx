@@ -9,8 +9,8 @@ import Avater4 from "../../../asset/Ellipse 6.png";
 import {useDonar} from "../../../DonarBackend/Donar"
 import { useFirebase,ContextNeeded } from "../../../DonarBackend/constants/Donar2";
 
-const CampaignCard = () => {
-  const {campaigns}  = useFirebase() as ContextNeeded
+const CampaignCard = ({campaigns}:ContextNeeded) => {
+
   
   return (
     <div className="w-[375px] bg-light-accent3 p-4 rounded-lg">
