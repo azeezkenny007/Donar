@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
 import { abi } from "./constants/contractMetadata.json";
 const contractAddress: string = "0x578A42E65EA6F8cca77940f79734c1da2868BBF7";
@@ -9,6 +9,16 @@ type IDonar = {
   connected: any;
   donate: () => void;
 };
+
+interface Campaigns{
+   CampaignImage:string
+   CampaignName:string
+   Country:string
+   Goal:string
+   Raised:string
+   percent:string
+   typeOfCare:string
+}
 
 const DonarContext = createContext<IDonar>({
   Metaconnect() {

@@ -6,22 +6,31 @@ import Avater1 from "../../../asset/Ellipse 3.png";
 import Avater2 from "../../../asset/Ellipse 4.png";
 import Avater3 from "../../../asset/Ellipse 5.png";
 import Avater4 from "../../../asset/Ellipse 6.png";
+import {useDonar} from "../../../DonarBackend/Donar"
+import { useFirebase,ContextNeeded,Campaigns } from "../../../DonarBackend/constants/Donar2";
 
-const CampaignCard = () => {
+type Props={
+  campaigns: Campaigns
+}
+
+
+const CampaignCard = ({campaigns}:Props) => {
+
+  
   return (
     <div className="w-[375px] bg-light-accent3 p-4 rounded-lg">
       <div>
-        <Image className="rounded-lg" src={phImg} alt="kids" />
+        <Image className="rounded-lg" src={`https://res.cloudinary.com/demo/image/fetch/${campaigns.CampaignImage}`} alt="kids"  width={400} height={100}/>
         <div className="py-4 space-y-4">
           <p className="text-[24px] font-medium text-light-text">
-            AIDS foundation funding Africa
+            {campaigns.CampaignName}
           </p>
           <div className="flex  text-light-text justify-between">
             <div className="flex space-x-2">
               <Image src={mapIcon} alt="icon" />
-              <p>Mozambique</p>
+              <p>{campaigns.Country}</p>
             </div>
-            <span className="bg-light-primary p-2 rounded-lg">Health Care</span>
+            <span className="bg-light-primary p-2 rounded-lg">{campaigns.typeOfCare}</span>
           </div>
         </div>
       </div>
@@ -30,15 +39,15 @@ const CampaignCard = () => {
         <div>
           <div className="rounded-full w-12 h-12 bg-light-accent2 p-2 grid place-content-center">
             <div className="rounded-full w-10 h-10 grid place-content-center bg-light-accent3">
-              30%
+              {campaigns.percent}%
             </div>
           </div>
         </div>
         <div className="space-y-4 text-sm lg:text-base">
           <p className="bg-gradient-to-tr  from-light-accent to-light-accent2 bg-clip-text text-transparent">
-            Goal: $50,000
+            Goal: ${campaigns.Goal}
           </p>
-          <p>Raised: $15, 000</p>
+          <p>Raised: ${campaigns.Raised}</p>
         </div>
         <div className="space-y-4 text-sm lg:text-base">
           <p>Donating to this project</p>
